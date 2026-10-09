@@ -1,5 +1,7 @@
-/** @type {import('next').NextConfig} */
-const backendUrl = process.env.BACKEND_API_URL || 'http://localhost:4000';
+let backendUrl = (process.env.BACKEND_API_URL || 'http://localhost:4000').trim().replace(/\/+$/, '');
+if (backendUrl.endsWith('/api')) {
+  backendUrl = backendUrl.slice(0, -4);
+}
 
 const nextConfig = {
   reactStrictMode: true,

@@ -1,4 +1,12 @@
-const API_BASE = '/api';
+const getApiBase = () => {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    const url = process.env.NEXT_PUBLIC_API_URL.trim().replace(/\/+$/, '');
+    return url.endsWith('/api') ? url : `${url}/api`;
+  }
+  return '/api';
+};
+
+const API_BASE = getApiBase();
 
 function getHeaders(): HeadersInit {
   const headers: Record<string, string> = {
@@ -22,8 +30,20 @@ async function handleResponse<T>(res: Response): Promise<T> {
         window.location.href = '/login';
       }
     }
-    const err = await res.json().catch(() => ({ message: 'API request failed' }));
-    throw new Error(err.message || `Request failed with status ${res.status}`);
+    let errorMsg = `Server error (${res.status})`;
+    try {
+      const err = await res.json();
+      errorMsg = Array.isArray(err.message) ? err.message.join(', ') : (err.message || errorMsg);
+    } catch {
+      if (res.status === 502) {
+        errorMsg = 'Backend service is waking up or temporarily unavailable (502 Bad Gateway). Please retry in 30 seconds.';
+      } else if (res.status === 504) {
+        errorMsg = 'Backend server timed out (504 Gateway Timeout).';
+      } else {
+        errorMsg = `API request failed with status ${res.status}`;
+      }
+    }
+    throw new Error(errorMsg);
   }
   return res.json();
 }

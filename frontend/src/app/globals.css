@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* LIGHT MODE — IVORY & CHAMPAGNE */
+    --background: #F7F5F0;
+    --sidebar: #F0ECE4;
+    --card: #FFFFFF;
+    --card-foreground: #252823;
+    --popover: #FFFFFF;
+    --popover-foreground: #252823;
+    
+    --foreground: #252823;
+    --muted-foreground: #777970;
+    --secondary: #EDE9E0;
+    --secondary-foreground: #252823;
+    --muted: #EFECE4;
+
+    --primary: #244638;
+    --primary-foreground: #FFFFFF;
+    --primary-hover: #1B352A;
+
+    --accent: #B89A65;
+    --accent-foreground: #FFFFFF;
+    --accent-subtle: #F6F1E7;
+
+    --border: #E8E4DB;
+    --input: #E8E4DB;
+    --ring: #244638;
+
+    --success: #397653;
+    --success-foreground: #FFFFFF;
+    --success-subtle: #EBF3EE;
+
+    --warning: #C58B38;
+    --warning-foreground: #FFFFFF;
+    --warning-subtle: #FAF3E8;
+
+    --urgent: #BF6557;
+    --urgent-foreground: #FFFFFF;
+    --urgent-subtle: #FBEFEF;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* DARK MODE — MIDNIGHT FOREST */
+    --background: #141714;
+    --sidebar: #191D19;
+    --card: #202520;
+    --card-foreground: #F3F0E8;
+    --popover: #202520;
+    --popover-foreground: #F3F0E8;
+
+    --foreground: #F3F0E8;
+    --muted-foreground: #A5ADA2;
+    --secondary: #272E27;
+    --secondary-foreground: #F3F0E8;
+    --muted: #272E27;
+
+    --primary: #426B54;
+    --primary-foreground: #FFFFFF;
+    --primary-hover: #4E7E63;
+
+    --accent: #C6A66B;
+    --accent-foreground: #141714;
+    --accent-subtle: #2C281F;
+
+    --border: #303830;
+    --input: #303830;
+    --ring: #426B54;
+
+    --success: #78B58A;
+    --success-foreground: #141714;
+    --success-subtle: #1C2B20;
+
+    --warning: #E0B36B;
+    --warning-foreground: #141714;
+    --warning-subtle: #2D271A;
+
+    --urgent: #E18A7B;
+    --urgent-foreground: #141714;
+    --urgent-subtle: #2F201E;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Luxury Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Luxury Editorial Surface & Glass Panels */
+.glass-panel {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.luxury-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+.dark .luxury-card {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.luxury-card-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card-hover:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Luxury Status Badges (Theme Aware) */
+.badge-new {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.badge-contacted {
+  background-color: var(--secondary);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+.badge-requirement {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.badge-property_shared {
+  background-color: var(--success-subtle);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+.badge-site_visit {
+  background-color: var(--warning-subtle);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+.badge-negotiation {
+  background-color: var(--warning-subtle);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+.badge-booked {
+  background-color: var(--success-subtle);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+.badge-lost {
+  background-color: var(--urgent-subtle);
+  color: var(--urgent);
+  border: 1px solid var(--urgent);
+}
+
+/* Mobile Safe Areas & Touch Enhancements */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent tap highlight gray box on iOS/Android WebViews */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure smooth touch action on buttons and interactive items */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Mobile friendly text selection prevention on interactive items */
+.touch-no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

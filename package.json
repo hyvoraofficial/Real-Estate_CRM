@@ -1,0 +1,21 @@
+{
+  "name": "hyvora-real-estate-crm",
+  "version": "1.0.0",
+  "description": "HYVORA Real Estate CRM - Intelligent Digital Memory & Follow-up Workspace",
+  "author": "HYVORA",
+  "private": true,
+  "scripts": {
+    "dev": "npm run start:all",
+    "start:all": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,green\" \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "backend:dev": "npm --prefix backend run start:dev",
+    "backend:build": "npm --prefix backend run build",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "seed": "npm --prefix backend run prisma:seed",
+    "db:push": "npm --prefix backend run prisma:push",
+    "build": "npm run backend:build && npm run frontend:build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

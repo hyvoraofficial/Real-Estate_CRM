@@ -62,13 +62,13 @@ export default function CustomersPage() {
         {/* Search Bar */}
         <div className="p-4 rounded-2xl bg-card border border-border luxury-card">
           <div className="relative">
-            <Search className="w-4 h-4 text-muted-foreground absolute left-3.5 top-3" />
+            <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by client mobile number (e.g. 9876500001), name, or email..."
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary"
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-primary"
             />
           </div>
         </div>

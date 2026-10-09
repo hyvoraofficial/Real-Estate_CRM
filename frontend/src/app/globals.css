@@ -210,9 +210,49 @@ button, a, input, select, textarea {
   touch-action: manipulation;
 }
 
-/* Mobile friendly text selection prevention on interactive items */
-.touch-no-select {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
+/* Universal Form Controls - Ensure all inputs, selects, textareas, and dropdown options have crisp, high-contrast dark text without altering box backgrounds */
+input,
+select,
+textarea,
+option,
+optgroup {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a !important;
 }
+
+option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+  opacity: 1 !important;
+}
+
+/* Chrome / Safari / Edge Autofill Universal Fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Form input interior icons readability */
+.relative:has(input) > svg,
+.relative:has(select) > svg,
+.relative:has(textarea) > svg {
+  color: #64748b !important;
+}
+
+

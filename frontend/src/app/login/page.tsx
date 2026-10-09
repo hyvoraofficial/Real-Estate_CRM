@@ -70,14 +70,14 @@ export default function LoginPage() {
             <div>
               <label className="block text-xs font-semibold text-foreground mb-1.5">Business Email</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-muted-foreground absolute left-3.5 top-3" />
+                <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@hyvora.com"
-                  className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-secondary/50 border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary"
+                  placeholder="admin@hyvora.com"
+                  className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white border border-border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-medium"
                 />
               </div>
             </div>
@@ -85,14 +85,14 @@ export default function LoginPage() {
             <div>
               <label className="block text-xs font-semibold text-foreground mb-1.5">Password</label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-muted-foreground absolute left-3.5 top-3" />
+                <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-secondary/50 border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary"
+                  className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white border border-border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-medium"
                 />
               </div>
             </div>

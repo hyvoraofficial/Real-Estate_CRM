@@ -297,7 +297,7 @@ export default function SettingsPage() {
                       placeholder="e.g. Ramesh Chandra"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground focus:outline-none focus:border-primary"
+                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-primary"
                     />
                   </div>
                   <div>
@@ -308,7 +308,7 @@ export default function SettingsPage() {
                       placeholder="ramesh@hyvora.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground focus:outline-none focus:border-primary"
+                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-primary"
                     />
                   </div>
                   <div>
@@ -318,7 +318,7 @@ export default function SettingsPage() {
                       placeholder="+91 9845011111"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground focus:outline-none focus:border-primary"
+                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-primary"
                     />
                   </div>
                   <div>
@@ -326,7 +326,7 @@ export default function SettingsPage() {
                     <select
                       value={role}
                       onChange={(e) => setRole(e.target.value as any)}
-                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground focus:outline-none focus:border-primary"
+                      className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 font-medium focus:outline-none focus:border-primary"
                     >
                       <option value="SALES_EXECUTIVE">Sales Executive</option>
                       <option value="ADMIN">Administrator</option>

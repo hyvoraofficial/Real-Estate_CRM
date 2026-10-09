@@ -97,13 +97,13 @@ export default function PropertiesPage() {
         <div className="p-4 rounded-2xl bg-card border border-border luxury-card space-y-3">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
             <div className="relative sm:col-span-2">
-              <Search className="w-4 h-4 text-muted-foreground absolute left-3.5 top-3" />
+              <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search property title, neighborhood, address..."
-                className="w-full pl-10 pr-4 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary"
+                className="w-full pl-10 pr-4 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-primary"
               />
             </div>
 
@@ -111,7 +111,7 @@ export default function PropertiesPage() {
               <select
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground focus:outline-none focus:border-primary"
+                className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 font-medium focus:outline-none focus:border-primary"
               >
                 <option value="">All Types</option>
                 <option value="Apartment">Apartment</option>
@@ -125,7 +125,7 @@ export default function PropertiesPage() {
               <select
                 value={bhk}
                 onChange={(e) => setBhk(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground focus:outline-none focus:border-primary"
+                className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 font-medium focus:outline-none focus:border-primary"
               >
                 <option value="">All BHKs</option>
                 <option value="1 BHK">1 BHK</option>
@@ -139,7 +139,7 @@ export default function PropertiesPage() {
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-foreground focus:outline-none focus:border-primary"
+                className="w-full px-3 py-2 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 font-medium focus:outline-none focus:border-primary"
               >
                 <option value="">All Statuses</option>
                 <option value="AVAILABLE">Available</option>

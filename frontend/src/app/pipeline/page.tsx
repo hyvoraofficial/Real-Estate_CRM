@@ -267,7 +267,7 @@ export default function PipelinePage() {
                                 <select
                                   value={lead.status}
                                   onChange={(e) => handleMoveStatus(lead.id, e.target.value as LeadStatus, e)}
-                                  className="px-1.5 py-1 rounded-md bg-secondary border border-border text-[10px] text-foreground focus:outline-none"
+                                  className="px-1.5 py-1 rounded-md bg-secondary border border-border text-[10px] text-slate-900 font-medium focus:outline-none"
                                 >
                                   {columns.map((c) => (
                                     <option key={c.status} value={c.status}>

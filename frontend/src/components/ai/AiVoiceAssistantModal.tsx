@@ -745,7 +745,7 @@ export function AiVoiceAssistantModal({
                     setInputText(e.target.value);
                     latestDataRef.current.inputText = e.target.value;
                   }}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-secondary/50 border border-border text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-secondary/50 border border-border text-xs text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-primary"
                 />
               </div>
             </div>

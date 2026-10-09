@@ -92,23 +92,25 @@ export function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModalProps) {
       >
         {/* Search Input Bar */}
         <div className="flex items-center px-4 py-3.5 border-b border-border bg-card/60 gap-3">
-          <Search className="w-5 h-5 text-accent shrink-0" />
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search phone number (e.g. 9876500001), name, location, property..."
-            className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
-          />
-          {query && (
-            <button
-              onClick={() => setQuery('')}
-              className="p-1 rounded-md text-muted-foreground hover:text-foreground"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search phone number (e.g. 9876500001), name, location, property..."
+              className="w-full pl-10 pr-9 py-2 rounded-xl bg-white border border-border text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-primary"
+            />
+            {query && (
+              <button
+                onClick={() => setQuery('')}
+                className="absolute right-2.5 top-2.5 p-1 rounded-md text-slate-500 hover:text-slate-900"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
           <kbd className="hidden sm:inline-block text-[11px] font-mono px-2 py-0.5 rounded bg-secondary text-muted-foreground border border-border">
             ESC
           </kbd>
